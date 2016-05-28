@@ -1,1 +1,50 @@
 hello world
+<script>
+  function run() {
+  var ch = [{
+    value: 3,
+    describe: '漂亮'
+  }, {
+    value: 1,
+    describe: '大胸'
+  }, {
+    value: 1,
+    describe: '长腿'
+  }, {
+    value: 1,
+    describe: '聪明伶俐'
+  }, {
+    value: 2,
+    describe: '专一'
+  }, {
+    value: 3,
+    describe: '贤惠'
+  }, {
+    value: 3,
+    describe: '性格好'
+  }, {
+    value: 2,
+    describe: '家境富裕'
+  }]
+  var flag = true;
+  var s = 0;
+  while (flag) {
+    var i = parseInt(Math.random() * (ch.length));
+    s += ch[i].value;
+    if (s < 5) {
+    document.write(ch[i].describe+ ' ￥' + ch[i].value);
+      ch.splice(i, 1);
+    }
+    if (s == 5) {
+    document.write(ch[i].describe+ ' ￥' + ch[i].value);
+      break;
+    }
+    if (s > 5) {
+      s = s - ch[i].value;
+    }
+  }
+}
+run();
+  
+  
+</script>
